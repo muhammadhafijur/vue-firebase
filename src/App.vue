@@ -17,7 +17,7 @@
         <a href="#">Subscribe</a>
         <a href="#">Buy Now</a>
       </template>
-      <h1>But our lates Products!</h1>
+      <h1>Buy our lates Products!</h1>
       <p>Minimalistic Design and great user experience</p>
     </Modal>
   </teleport>
