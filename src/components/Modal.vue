@@ -8,6 +8,11 @@
 				<slot name="links"></slot>
 			</div>
 		</div>
+		<div class="">
+			<slot name="buttons">
+
+			</slot>
+		</div>
 	</div>
 </template>
 
