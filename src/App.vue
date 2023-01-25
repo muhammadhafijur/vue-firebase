@@ -1,8 +1,8 @@
 <template>
   <h1>{{ title }}</h1>
   <p>Welcome...</p>
-  <div v-if="showModal">
-    <Modal  theme="sale" @close="toggleModal">
+  <teleport to="#modals" v-if="showModal">
+    <Modal theme="sale" @close="toggleModal">
       <template v-slot:links>
         <a href="#">sign up now</a>
         <a href="#">more infor</a>
@@ -10,8 +10,8 @@
         <h1>Summer Giveaway</h1>
         <p>Grab your favourite Tshirt for half Price!</p>
     </Modal>
-  </div>
-  <div v-if="showModalTwo">
+  </teleport>
+  <teleport to="#modals" v-if="showModalTwo">
     <Modal @close="toggleModalTwo">
       <template v-slot:buttons>
         <a href="#">Subscribe</a>
@@ -20,9 +20,9 @@
       <h1>But our lates Products!</h1>
       <p>Minimalistic Design and great user experience</p>
     </Modal>
-  </div>
+  </teleport>
   <button @click.alt="toggleModal">open modal (alt)</button>
-  <button @click.shift="toggleModalTwo">Open Modal Two (shift)</button>
+  <button @click ="toggleModalTwo">Open Modal Two (shift)</button>
 </template>
 
 <script>
@@ -35,8 +35,6 @@ export default {
   data() {
     return {
       title: "My First Vue App",
-      header: "Sign up for the Giveaway",
-      text: "Grab your t-shirt for half price!",
       showModal: false,
       showModalTwo: false
     }
@@ -53,7 +51,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, #modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
